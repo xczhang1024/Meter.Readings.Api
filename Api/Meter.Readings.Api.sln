@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meter.Readings.Api", "Meter.Readings.Api\Meter.Readings.Api.csproj", "{7CA26BBC-5670-4288-9864-A8366425D75F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meter.Readings.Data", "Meter.Readings.Data\Meter.Readings.Data.csproj", "{9759A6AC-C382-4303-9575-A0DD2363131D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Meter.Readings.Api.Tests", "Meter.Readings.Api.Tests\Meter.Readings.Api.Tests.csproj", "{E26F7236-4214-48D3-9C8A-3028822D5856}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7CA26BBC-5670-4288-9864-A8366425D75F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CA26BBC-5670-4288-9864-A8366425D75F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CA26BBC-5670-4288-9864-A8366425D75F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CA26BBC-5670-4288-9864-A8366425D75F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9759A6AC-C382-4303-9575-A0DD2363131D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9759A6AC-C382-4303-9575-A0DD2363131D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9759A6AC-C382-4303-9575-A0DD2363131D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9759A6AC-C382-4303-9575-A0DD2363131D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E26F7236-4214-48D3-9C8A-3028822D5856}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E26F7236-4214-48D3-9C8A-3028822D5856}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E26F7236-4214-48D3-9C8A-3028822D5856}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E26F7236-4214-48D3-9C8A-3028822D5856}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
