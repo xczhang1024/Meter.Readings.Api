@@ -2,10 +2,11 @@ using Xunit;
 
 namespace Meter.Readings.Api.Tests;
 
-public class UnitTest1
+public class GetValidReadingsServiceTests
 {
     [Fact]
     public void Test1()
     {
+        
     }
 }

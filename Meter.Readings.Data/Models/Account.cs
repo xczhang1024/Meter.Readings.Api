@@ -8,17 +8,17 @@ public class Account
     /// <summary>
     /// Account Id
     /// </summary>
-    public int AccountId { get; set; }
+    public int AccountId { get; init; }
     
     /// <summary>
     /// First Name
     /// </summary>
-    public string FirstName { get; set; }
+    public string FirstName { get; init; }
     
     /// <summary>
     /// Last Name
     /// </summary>
-    public string LastName { get; set; }
+    public string LastName { get; init; }
     
     /// <summary>
     /// Meter readings belonging to account

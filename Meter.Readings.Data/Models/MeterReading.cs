@@ -19,6 +19,11 @@ public class MeterReading
     /// Value of meter reading
     /// </summary>
     public string Value { get; set; }
+    
+    /// <summary>
+    /// Account id
+    /// </summary>
+    public int AccountId { get; set; }
 
     /// <summary>
     /// Account for meter reading
