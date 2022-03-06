@@ -28,7 +28,6 @@ public class GetValidReadingsService : IGetValidReadingsService
     {
         var config = new CsvConfiguration(CultureInfo.GetCultureInfo("en-GB"))
         {
-            DetectColumnCountChanges = true,
             HasHeaderRecord = true
         };
         
@@ -46,7 +45,9 @@ public class GetValidReadingsService : IGetValidReadingsService
             
             try
             {
-                readings.Add(csvReader.GetRecord<MeterReadingModel>());
+                var record = csvReader.GetRecord<MeterReadingModel>();
+                Console.WriteLine(csvReader.ColumnCount);
+                readings.Add(record);
             }
             catch (BadDataException bde)
             {
