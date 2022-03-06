@@ -6,9 +6,9 @@ namespace Meter.Readings.Data;
 
 public class MeterReadingsDbContext : DbContext
 {
-    public DbSet<Account> Accounts { get; set; }
+    public virtual DbSet<Account> Accounts { get; set; }
     
-    public DbSet<MeterReading> MeterReadings { get; set; }
+    public virtual DbSet<MeterReading> MeterReadings { get; set; }
 
     public MeterReadingsDbContext()
     {

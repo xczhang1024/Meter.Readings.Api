@@ -1,5 +1,6 @@
 ﻿using Meter.Readings.Api.Repository;
 using Meter.Readings.Api.Services;
+using Meter.Readings.Api.Services.Csv;
 using Meter.Readings.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -39,6 +40,8 @@ public class Startup
             .UseSqlServer(connectionString));
 
         services.AddScoped<IMeterReadingsRepository, MeterReadingsRepository>();
+        services.AddTransient<IFileReader, FileReader>();
+        services.AddTransient<IGetValidReadingsService, GetValidReadingsService>();
         services.AddTransient<IMeterReadingsService, MeterReadingsService>();
     }
 

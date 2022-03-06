@@ -16,9 +16,8 @@ public class MeterReadingsController : ControllerBase
     
     [HttpPost]
     [Route("meter-reading-uploads")]
-    public IActionResult UploadReadingsFile(MeterReadingsFileDto fileDto)
+    public async Task<IActionResult> UploadReadingsFile([FromForm] MeterReadingsFileDto fileDto)
     {
-        _service.ProcessReadingsFromFile(fileDto.File);
-        return Ok();
+        return await _service.ProcessReadingsFromFile(fileDto.File);
     }
 }

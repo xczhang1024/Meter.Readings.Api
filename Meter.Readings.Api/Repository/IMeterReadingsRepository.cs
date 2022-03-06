@@ -8,7 +8,7 @@ namespace Meter.Readings.Api.Repository;
 /// </summary>
 public interface IMeterReadingsRepository
 {
-    Task<Account> GetAccount(int accountId);
+    Task<List<Account>> GetAccounts(IEnumerable<int> accountIds);
     
     Task<MeterReading> GetMeterReading(int accountId, DateTime dateTime, string value);
     

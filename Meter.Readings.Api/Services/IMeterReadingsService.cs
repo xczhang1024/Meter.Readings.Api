@@ -4,5 +4,5 @@ namespace Meter.Readings.Api.Services;
 
 public interface IMeterReadingsService
 {
-    IActionResult ProcessReadingsFromFile(IFormFile file);
+    Task<IActionResult> ProcessReadingsFromFile(IFormFile file);
 }

@@ -4,5 +4,5 @@ namespace Meter.Readings.Api.Services.Csv;
 
 public interface IGetValidReadingsService
 {
-    IEnumerable<MeterReadingModel> GetValidReadings(string meterReadings);
+    Task<ValidMeterReadingsModel> GetValidReadings(string meterReadings);
 }
