@@ -3,9 +3,6 @@ using Meter.Readings.Data.Models;
 
 namespace Meter.Readings.Api.Repository;
 
-/// <summary>
-/// Interface for meter readings repository
-/// </summary>
 public interface IMeterReadingsRepository
 {
     Task<List<Account>> GetAccounts(IEnumerable<int> accountIds);

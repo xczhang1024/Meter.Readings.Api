@@ -15,6 +15,6 @@ public class ValidFormatFilter : IMeterReadingsFilter
     {
         return (value.Length == 5
                 && int.TryParse(value, out var iValue)
-                && iValue > 0);
+                && iValue >= 0);
     }
 }
