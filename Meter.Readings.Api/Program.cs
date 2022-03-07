@@ -1,7 +1,14 @@
 namespace Meter.Readings.Api
 {
+    /// <summary>
+    /// Program
+    /// </summary>
     public class Program
     {
+        /// <summary>
+        /// Entry point
+        /// </summary>
+        /// <param name="args"></param>
         public static void Main(string[] args)
         {
             Console.Title = "Blog API";

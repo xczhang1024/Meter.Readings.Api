@@ -31,7 +31,7 @@ public class ValidAccountFilterShould
         };
 
         var repository = new MeterReadingsRepository(dbContextMock.Object);
-        var sut = new ValidAccountFilter(repository);
+        var sut = new InvalidAccountFilter(repository);
 
         meterReadings = await sut.Filter(meterReadings);
 
@@ -58,7 +58,7 @@ public class ValidAccountFilterShould
         };
 
         var repository = new MeterReadingsRepository(dbContextMock.Object);
-        var sut = new ValidAccountFilter(repository);
+        var sut = new InvalidAccountFilter(repository);
 
         meterReadings = await sut.Filter(meterReadings);
 

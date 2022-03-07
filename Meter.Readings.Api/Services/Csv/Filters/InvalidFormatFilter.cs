@@ -2,8 +2,16 @@
 
 namespace Meter.Readings.Api.Services.Csv.Filters;
 
-public class ValidFormatFilter : IMeterReadingsFilter
+/// <summary>
+/// Filter out readings which are in an invalid format
+/// </summary>
+public class InvalidFormatFilter : IMeterReadingsFilter
 {
+    /// <summary>
+    /// Filter out invalid readings, leaving only valid readings
+    /// </summary>
+    /// <param name="meterReadings"></param>
+    /// <returns></returns>
     public Task<List<MeterReadingModel>> Filter(List<MeterReadingModel> meterReadings)
     {
         return Task.FromResult(meterReadings
@@ -11,6 +19,11 @@ public class ValidFormatFilter : IMeterReadingsFilter
             .ToList());
     }
     
+    /// <summary>
+    /// Helper to test for validity
+    /// </summary>
+    /// <param name="value"></param>
+    /// <returns></returns>
     private static bool IsMeterReadValueValid(string value)
     {
         return (value.Length == 5

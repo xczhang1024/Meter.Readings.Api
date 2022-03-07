@@ -3,15 +3,30 @@ using Meter.Readings.Api.Repository;
 
 namespace Meter.Readings.Api.Services.Csv.Filters;
 
-public class ValidAccountFilter : IMeterReadingsFilter
+/// <summary>
+/// Filter out readings from invalid accounts
+/// </summary>
+public class InvalidAccountFilter : IMeterReadingsFilter
 {
+    /// <summary>
+    /// Repository
+    /// </summary>
     private readonly IMeterReadingsRepository _repository;
     
-    public ValidAccountFilter(IMeterReadingsRepository repository)
+    /// <summary>
+    /// Constructor
+    /// </summary>
+    /// <param name="repository"></param>
+    public InvalidAccountFilter(IMeterReadingsRepository repository)
     {
         _repository = repository;
     }
     
+    /// <summary>
+    /// Filter out invalid readings, leaving only valid readings
+    /// </summary>
+    /// <param name="meterReadings"></param>
+    /// <returns></returns>
     public async Task<List<MeterReadingModel>> Filter(List<MeterReadingModel> meterReadings)
     {
         var accountIds = meterReadings.Select(reading => reading.AccountId);

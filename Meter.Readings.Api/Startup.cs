@@ -6,15 +6,29 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Meter.Readings.Api;
 
+/// <summary>
+/// Startup
+/// </summary>
 public class Startup
 {
+    /// <summary>
+    /// Configuration
+    /// </summary>
     private IConfiguration Configuration { get; }
     
+    /// <summary>
+    /// Startup
+    /// </summary>
+    /// <param name="configuration"></param>
     public Startup(IConfiguration configuration)
     {
         Configuration = configuration;
     }
     
+    /// <summary>
+    /// Configure services
+    /// </summary>
+    /// <param name="services"></param>
     public void ConfigureServices(IServiceCollection services)
     {
         services.AddCors();
@@ -33,6 +47,11 @@ public class Startup
         services.AddTransient<IMeterReadingsService, MeterReadingsService>();
     }
     
+    /// <summary>
+    /// Configure
+    /// </summary>
+    /// <param name="app"></param>
+    /// <param name="env"></param>
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     {
         app.UseSwagger();

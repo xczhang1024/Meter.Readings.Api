@@ -5,14 +5,32 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Meter.Readings.Api.Services;
 
+/// <summary>
+/// Service for api controller
+/// </summary>
 public class MeterReadingsService : IMeterReadingsService
 {
+    /// <summary>
+    /// Repository
+    /// </summary>
     private readonly IMeterReadingsRepository _repository;
 
+    /// <summary>
+    /// File reader
+    /// </summary>
     private readonly IFileReader _fileReader;
 
+    /// <summary>
+    /// Service for getting valid readings
+    /// </summary>
     private readonly IGetValidReadingsService _getValidReadingsService;
     
+    /// <summary>
+    /// Constructor
+    /// </summary>
+    /// <param name="repository"></param>
+    /// <param name="fileReader"></param>
+    /// <param name="getValidReadingsService"></param>
     public MeterReadingsService(IMeterReadingsRepository repository, 
         IFileReader fileReader, 
         IGetValidReadingsService getValidReadingsService)
@@ -22,6 +40,11 @@ public class MeterReadingsService : IMeterReadingsService
         _getValidReadingsService = getValidReadingsService;
     }
     
+    /// <summary>
+    /// Process readings from file
+    /// </summary>
+    /// <param name="file"></param>
+    /// <returns></returns>
     public async Task<IActionResult> ProcessReadingsFromFile(IFormFile file)
     {
         try

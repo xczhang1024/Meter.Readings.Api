@@ -15,3 +15,4 @@ Limitation:
 * If a row in the CSV contains more columns than is required, the CsvHelper CsvReader component does not reject that row
 * There is a setting to reject the row, but it also throws an exception which stops the file reading completely
 * This limitation could be mitigated, if there was more time
+* For some reason my IDE is not picking up all the tests at startup but they are all there

@@ -7,23 +7,41 @@ using Meter.Readings.Api.Services.Csv.Filters;
 
 namespace Meter.Readings.Api.Services.Csv;
 
+/// <summary>
+/// Service for getting valid readings
+/// </summary>
 public class GetValidReadingsService : IGetValidReadingsService
 {
+    /// <summary>
+    /// Repository
+    /// </summary>
     private readonly IMeterReadingsRepository _repository;
 
+    /// <summary>
+    /// List of filters
+    /// </summary>
     private readonly List<IMeterReadingsFilter> _meterReadingsFilters;
 
+    /// <summary>
+    /// Constructor
+    /// </summary>
+    /// <param name="repository"></param>
     public GetValidReadingsService(IMeterReadingsRepository repository)
     {
         _repository = repository;
         _meterReadingsFilters = new List<IMeterReadingsFilter>()
         {
-            new ValidFormatFilter(),
-            new ValidAccountFilter(_repository),
+            new InvalidFormatFilter(),
+            new InvalidAccountFilter(_repository),
             new NoDuplicationFilter(_repository)
         };
     }
     
+    /// <summary>
+    /// Get valid readings from csv string
+    /// </summary>
+    /// <param name="meterReadings"></param>
+    /// <returns></returns>
     public async Task<ValidMeterReadingsModel> GetValidReadings(string meterReadings)
     {
         var config = new CsvConfiguration(CultureInfo.GetCultureInfo("en-GB"))

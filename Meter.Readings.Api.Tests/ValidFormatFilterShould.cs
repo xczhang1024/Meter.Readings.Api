@@ -15,7 +15,7 @@ public class ValidFormatFilterShould
             new() { AccountId = 1, MeterReadValue = "4444", MeterReadingDateTime = DateTime.Now }
         };
 
-        var sut = new ValidFormatFilter();
+        var sut = new InvalidFormatFilter();
         meterReadings = await sut.Filter(meterReadings);
         
         Assert.Empty(meterReadings);
@@ -29,7 +29,7 @@ public class ValidFormatFilterShould
             new() { AccountId = 1, MeterReadValue = "AA", MeterReadingDateTime = DateTime.Now }
         };
 
-        var sut = new ValidFormatFilter();
+        var sut = new InvalidFormatFilter();
         meterReadings = await sut.Filter(meterReadings);
         
         Assert.Empty(meterReadings);
@@ -43,7 +43,7 @@ public class ValidFormatFilterShould
             new() { AccountId = 1, MeterReadValue = "12345", MeterReadingDateTime = DateTime.Now }
         };
 
-        var sut = new ValidFormatFilter();
+        var sut = new InvalidFormatFilter();
         meterReadings = await sut.Filter(meterReadings);
         
         Assert.Single(meterReadings);
